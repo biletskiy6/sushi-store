@@ -1,0 +1,23 @@
+.filter {
+    margin-bottom: 30px;
+
+    button {
+        background-color: transparent;
+        border: 1px solid #d2d2d2;
+        color: #797878;
+        padding: 4px 15px 5px 15px;
+        border-radius: 40px;
+
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            // border-color: $accent;
+            background-color: #dd3333;
+            color: #fff;
+        }
+    }
+}

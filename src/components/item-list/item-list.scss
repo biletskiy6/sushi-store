@@ -1,0 +1,39 @@
+.main-wrapper {
+    margin-top: calc(4.6vw + 40px);
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+
+
+    &-item {
+        box-sizing: border-box;
+        width: calc(100% / 12 * 4 - 30px);
+        margin: 0 15px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        transition: transform .35s ease;
+        // box-shadow: 0 10px 6px -6px #777;
+
+        &:hover {
+            transform: scale(1.015);
+            transition: transform .35s ease;
+        }
+    }
+
+    &-description {
+        display: flex;
+    }
+
+    button {
+        background-color: #dd3333;
+        color: #fff;
+        padding: 7px;
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+    }
+}

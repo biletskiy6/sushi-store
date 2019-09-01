@@ -3,6 +3,7 @@ import ItemList from "../components/item-list/item-list";
 import { connect } from "react-redux";
 import withSushiService from "../components/hoc";
 import { fetchProducts } from "../actions";
+import orderBy from "lodash/orderBy";
 
 class ItemListContainer extends Component {
   componentDidMount = () => {
@@ -14,12 +15,30 @@ class ItemListContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ products: { itemList } }, ownProps) => {
+const filterItems = (itemList, term) => {
+  switch (term) {
+    case "all":
+      return itemList;
+    case "priceLow":
+      return orderBy(itemList, "price", "asc");
+    case "priceHigh":
+      return orderBy(itemList, "price", "desc");
+    case "newest":
+      return orderBy(itemList, "id", "desc");
+    default:
+      return itemList;
+  }
+};
+
+const mapStateToProps = (
+  { products: { itemList }, filter: { filterBy } },
+  ownProps
+) => {
   const { productId } = ownProps;
   itemList = productId
     ? itemList.filter(item => item.categoryId == productId)
     : itemList;
-  return { itemList };
+  return { itemList: filterItems(itemList, filterBy) };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

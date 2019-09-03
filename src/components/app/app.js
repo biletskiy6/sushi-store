@@ -17,11 +17,6 @@ const App = props => {
           <Route exact path="/" component={HomePage}></Route>
           <Route path="/admin" exact component={AdminPage}></Route>
           <Route
-            path="/admin/product/add"
-            exact
-            component={AdminProductAddPage}
-          ></Route>
-          <Route
             path="/categories/:id"
             component={({ match: { params } }) => {
               const { id } = params;

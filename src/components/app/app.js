@@ -1,35 +1,31 @@
 import React from "react";
-import Header from "../header";
-import CategoriesList from "../categories-list";
+
 import { Route, Switch } from "react-router-dom";
-import { HomePage } from "../pages";
-import ItemList from "../../containers/item-list-container";
+import {
+  HomePage,
+  AdminPage,
+  CategoryPage,
+  AdminProductAddPage
+} from "../pages";
 import "./app.scss";
-import Cart from "../cart";
 
-const Row = ({ LeftColumn, RightColumn }) => {
+const App = props => {
   return (
-    <div className='row'>
-      <LeftColumn />
-      <RightColumn />
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <div className='app'>
-      <Cart />
-      <Header />
-      <div className='app-container'>
-        <CategoriesList />
+    <div className="app">
+      <div className="app-container">
         <Switch>
-          <Route path='/' exact component={HomePage}></Route>
+          <Route exact path="/" component={HomePage}></Route>
+          <Route path="/admin" exact component={AdminPage}></Route>
           <Route
-            path='/categories/:id'
+            path="/admin/product/add"
+            exact
+            component={AdminProductAddPage}
+          ></Route>
+          <Route
+            path="/categories/:id"
             component={({ match: { params } }) => {
               const { id } = params;
-              return <ItemList productId={id} />;
+              return <CategoryPage id={id} />;
             }}
           ></Route>
         </Switch>

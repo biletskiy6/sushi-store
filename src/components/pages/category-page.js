@@ -4,15 +4,16 @@ import Header from "../header";
 import CategoriesList from "../categories-list";
 import Cart from "../cart";
 import "./pages.scss";
-const HomePage = () => {
+const CategoryPage = props => {
+  const { id } = props;
   return (
     <React.Fragment>
       <Cart />
       <Header />
       <CategoriesList />
-      <ItemList />
+      <ItemList productId={id} />
     </React.Fragment>
   );
 };
 
-export { HomePage };
+export { CategoryPage };

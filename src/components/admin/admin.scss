@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+}
+.admin {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.admin-aside {
+  top: 0;
+  //   position: fixed;
+  //   height: 100vh;
+  background: #fff;
+  z-index: 1070;
+  width: 16%;
+  box-shadow: 0 0.125rem 9.375rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.5rem rgba(90, 97, 105, 0.12),
+    0 0.9375rem 1.375rem rgba(90, 97, 105, 0.1),
+    0 0.4375rem 2.1875rem rgba(165, 182, 201, 0.1);
+}
+
+.admin-main {
+  background-color: #f5f6f8;
+  width: 84%;
+  flex: 1;
+}

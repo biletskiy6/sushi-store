@@ -19,22 +19,19 @@ class CategoriesListContainer extends Component {
 
 const CategoriesList = props => {
   return (
-    <aside className='categories-menu'>
-      <ul className='categories-list'>
+    <aside className="categories-menu">
+      <ul className="categories-list">
         {props.itemList &&
           props.itemList.map(item => {
             return (
-              <li key={item.id} className='categories-list__item'>
+              <li key={item.id} className="categories-list__item">
                 <Link
-                  className='categories-list__link'
+                  className="categories-list__link"
                   to={`/categories/${item.id}`}
                 >
-                  <img src={sushiImg} alt='' />
+                  <img src={sushiImg} alt="" />
                   <span>{item.title}</span>
                 </Link>
-                {/* <a href='#' className='categories-list__link'>
-                 
-                </a> */}
               </li>
             );
           })}

@@ -30,15 +30,23 @@ const filterItems = (itemList, term) => {
   }
 };
 
+const searchFilter = (itemList, term) => {
+  return itemList.filter(item => {
+    return item.title.toLowerCase().indexOf(term.toLowerCase()) > -1;
+  });
+};
+
 const mapStateToProps = (
-  { products: { itemList }, filter: { filterBy } },
+  { products: { itemList }, filter: { filterBy, searchTerm } },
   ownProps
 ) => {
   const { productId } = ownProps;
   itemList = productId
     ? itemList.filter(item => item.categoryId == productId)
     : itemList;
-  return { itemList: filterItems(itemList, filterBy) };
+  return {
+    itemList: searchFilter(filterItems(itemList, filterBy), searchTerm.trim())
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

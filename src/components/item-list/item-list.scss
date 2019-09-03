@@ -1,39 +1,62 @@
 .main-wrapper {
-    margin-top: calc(4.6vw + 40px);
+  margin-top: calc(4.6vw + 40px);
 }
 
 .products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  &-item {
+    box-sizing: border-box;
+    width: calc(100% / 12 * 3 - 30px);
+    margin: 0 15px;
+    margin-bottom: 30px;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.35s ease;
+    // box-shadow: 0 10px 6px -6px #777;
+    // border: 1px solid #efefef;
+    &:hover {
+      transform: scale(1.015);
+      transition: transform 0.35s ease;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &-description {
     display: flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
-
-
-    &-item {
-        box-sizing: border-box;
-        width: calc(100% / 12 * 4 - 30px);
-        margin: 0 15px;
-        margin-bottom: 30px;
-        border-radius: 15px;
-        transition: transform .35s ease;
-        // box-shadow: 0 10px 6px -6px #777;
-
-        &:hover {
-            transform: scale(1.015);
-            transition: transform .35s ease;
-        }
+    padding: 0 15px;
+    margin-bottom: 15px;
+    p {
+      color: #8d8c8d;
     }
-
-    &-description {
-        display: flex;
+  }
+  &-info {
+    h3 {
+      font-family: "MullerBold";
     }
-
-    button {
-        background-color: #dd3333;
-        color: #fff;
-        padding: 7px;
-        border-radius: 5px;
-        display: block;
-        width: 100%;
+  }
+  &-price {
+    align-self: center;
+    span {
+      font-size: 20px;
+      //   color: #b92525;
     }
+  }
+
+  button {
+    // border: 1px solid #efefef;
+
+    color: #000;
+    background-color: transparent;
+    border: none;
+    padding: 7px;
+    border-radius: 0 0 5px 5px;
+    display: block;
+    width: 100%;
+  }
 }

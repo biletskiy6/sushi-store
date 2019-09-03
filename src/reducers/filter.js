@@ -15,6 +15,11 @@ const Filter = (state = initialState, action) => {
         ...state,
         searchTerm: action.payload
       };
+    case "RESET_SEARCH_TERM":
+      return {
+        ...state,
+        searchTerm: ""
+      };
     default:
       return state;
   }

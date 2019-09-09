@@ -15,7 +15,7 @@ const App = props => {
       <div className="app-container">
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
-          <Route path="/admin" exact component={AdminPage}></Route>
+          <Route path="/admin" component={AdminPage}></Route>
           <Route
             path="/categories/:id"
             component={({ match: { params } }) => {

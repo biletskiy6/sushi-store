@@ -12,4 +12,7 @@ export default class SushiService {
     const data = this.getResource("/products/");
     return data;
   };
+  getProduct = async id => {
+    return await this.getResource(`/products/${id}`);
+  };
 }

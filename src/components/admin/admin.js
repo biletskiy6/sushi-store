@@ -14,39 +14,43 @@ import "./admin.scss";
 class Admin extends Component {
   render() {
     return (
-      <Router basename="/admin/">
+      <Router basename='/admin/'>
         {/* <Route path="/admin" exact component={() => <span>1</span>}></Route> */}
-        <div className="admin">
-          <aside className="admin-aside">
-            <nav className="admin-navigation">
+        <div className='admin'>
+          <aside className='admin-aside'>
+            <nav className='admin-navigation'>
               <ul>
                 <li>
-                  <Link to="/products/">Управление продуктами</Link>
+                  <Link to='/products/'>Управление продуктами</Link>
                 </li>
                 <li>
-                  <Link to="/categories/">Управление категориями</Link>
+                  <Link to='/categories/'>Управление категориями</Link>
                 </li>
               </ul>
             </nav>
           </aside>
-          <main className="admin-main">
+          <main className='admin-main'>
             <Route
-              path="/categories/"
+              path='/categories/'
               component={() => (
                 <span>
                   Управление Категориями
-                  <Link to="/category/add/">Add category</Link>
+                  <Link to='/category/add/'>Add category</Link>
                 </span>
               )}
             ></Route>
-            <Route path="/products/" component={AdminAllProducts}></Route>
-            <Route path="/products/add" component={AdminAddProduct}></Route>
+            <Route exact path='/products/' component={AdminAllProducts}></Route>
             <Route
-              path="/products/delete/:id"
+              exact
+              path='/products/add'
+              component={AdminAddProduct}
+            ></Route>
+            <Route
+              path='/products/delete/:id'
               component={AdminDeleteProduct}
             ></Route>
             <Route
-              path="/products/edit/:id"
+              path='/products/edit/:id'
               component={AdminEditProduct}
             ></Route>
           </main>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import sushiImg from "../../assets/images/fila.jpg";
+import hryvnaIcon from "../../assets/images/hryvnia.svg";
+import shoppingCart from "../../assets/images/shopping-cart-48.png";
 import { connect } from "react-redux";
 
 import * as productActions from "../../actions/product";
@@ -10,28 +11,29 @@ import Filter from "../filter";
 
 const ItemList = props => {
   return (
-    <main className="main">
-      <div className="container">
-        <div className="main-wrapper">
+    <main className='main'>
+      <div className='container'>
+        <div className='main-wrapper'>
           <Filter />
-          <ul className="products item-list">
+          <ul className='products item-list'>
             {props.itemList &&
               props.itemList.map(item => {
                 item.price = parseInt(item.price);
                 return (
-                  <li key={item.id} className="products-item">
-                    <img src={item.image} alt="" />
-                    <div className="products-description">
-                      <div className="products-info">
+                  <li key={item.id} className='products-item'>
+                    <img src={item.image} alt='' />
+                    <div className='products-description'>
+                      <div className='products-info'>
                         <h3>{item.title}</h3>
                         <p>{item.description.slice(0, 100)}</p>
                       </div>
-                      <div className="products-price">
+                      <div className='products-price'>
+                        <img src={hryvnaIcon} alt='' />
                         <span>{item.price}</span>
                       </div>
                     </div>
                     <button onClick={() => props.addProduct(item)}>
-                      Add to cart
+                      <img src={shoppingCart} alt='' />В корзину
                     </button>
                   </li>
                 );

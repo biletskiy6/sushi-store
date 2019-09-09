@@ -37,29 +37,30 @@ class AdminAllProducts extends Component {
 
   render() {
     const { itemList } = this.state;
+    console.log(this.state.categoryList);
     return (
-      <div className="admin-all-products">
-        <Link to="/products/add">Добавить товар</Link>
-        <div className="table100 ver4 m-b-110">
-          <table data-vertable="ver4">
+      <div className='admin-all-products'>
+        <Link to='/products/add'>Добавить товар</Link>
+        <div className='table100 ver4 m-b-110'>
+          <table data-vertable='ver4'>
             <thead>
-              <tr className="row100 head">
-                <th className="column100 column1" data-column="column1">
+              <tr className='row100 head'>
+                <th className='column100 column1' data-column='column1'>
                   id
                 </th>
-                <th className="column100 column2" data-column="column2">
+                <th className='column100 column2' data-column='column2'>
                   Название
                 </th>
-                <th className="column100 column3" data-column="column3">
+                <th className='column100 column3' data-column='column3'>
                   Описание
                 </th>
-                <th className="column100 column4" data-column="column4">
+                <th className='column100 column4' data-column='column4'>
                   Цена
                 </th>
-                <th className="column100 column5" data-column="column5">
+                <th className='column100 column5' data-column='column5'>
                   Категория
                 </th>
-                <th className="column100 column5" data-column="column6">
+                <th className='column100 column5' data-column='column6'>
                   Функции
                 </th>
               </tr>
@@ -68,7 +69,7 @@ class AdminAllProducts extends Component {
               {itemList &&
                 itemList.map(item => {
                   return (
-                    <tr key={item.id} className="row100">
+                    <tr key={item.id} className='row100'>
                       <td>{item.id}</td>
                       <td>{item.title}</td>
                       <td>{item.description}</td>

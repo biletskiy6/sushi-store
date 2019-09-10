@@ -12,7 +12,9 @@ const Header = ({ cartList, openCartModal }) => {
       <Link to="/" className="logo">
         <img src={logo} alt="" />
       </Link>
-      <a href="#">+38(068)026-27-20</a>
+      <a href="#" className="phone">
+        +38(068)026-27-20
+      </a>
       <div className="user-box">
         <div className="user-search">
           <Search />

@@ -1,55 +1,69 @@
 .header {
+  display: flex;
+  position: fixed;
+  height: 5vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #ececec;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
+
+  .user-box {
     display: flex;
-    position: fixed;
-    height: 5vw;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .85);
-    border-bottom: 1px solid #ececec;
-    justify-content: space-between;
-    align-items: center;
+    height: 100%;
+  }
 
-    .logo {
-        img {
-            width: 200px;
-        }
+  .user-cart button {
+    display: block;
+    border: none;
+    position: relative;
+    display: inline-flex;
+    background-color: #ff0000;
+    padding: 0;
+    width: 80px;
+    height: 100%;
+
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: auto;
     }
 
-    .user-box {
-        display: flex;
-        height: 100%;
+    .user-cart__counter {
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      color: #ff0000;
+      background-color: #fff;
+      border-radius: 50%;
+      font-size: 12px;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+      line-height: 16px;
     }
+  }
+}
 
-    .user-cart button {
-        display: block;
-        border: none;
-        position: relative;
-        display: inline-flex;
-        background-color: #ff0000;
-        width: 80px;
-        height: 100%;
-
-        img {
-            display: block;
-            width: 40px;
-            height: 40px;
-            margin: auto;
-        }
-
-        .user-cart__counter {
-            position: absolute;
-            bottom: 5px;
-            right: 10px;
-            color: #ff0000;
-            background-color: #fff;
-            border-radius: 50%;
-            font-size: 12px;
-            width: 16px;
-            height: 16px;
-            text-align: center;
-            line-height: 16px;
-        }
-    }
+.phone {
+  text-decoration: none;
+  color: inherit;
+  font-family: "MullerBold";
+  transition: all 0.35s ease;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.75;
+    transition: all 0.35s ease;
+    color: inherit;
+  }
 }

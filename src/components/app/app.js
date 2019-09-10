@@ -23,6 +23,7 @@ const App = props => {
               return <CategoryPage id={id} />;
             }}
           ></Route>
+          {/* <Route path="/search/" component={SearchPage}></Route> */}
         </Switch>
       </div>
     </div>

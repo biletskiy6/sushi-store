@@ -110,10 +110,7 @@ class AdminEditProduct extends Component {
     e.preventDefault();
     const idProductToEdit = this.props.match.params.id;
     const fd = this.createFormData();
-    axios.post(
-      `http://localhost:8888/sushi-store/products/edit/${idProductToEdit}`,
-      fd
-    );
+    axios.post(`http://sushi-store/products/edit/${idProductToEdit}`, fd);
     this.props.history.push("/products/");
     window.location.reload();
   };
@@ -124,33 +121,33 @@ class AdminEditProduct extends Component {
     return (
       <Fragment>
         <form
-          action='#'
+          action="#"
           onSubmit={this.onSubmitHandler}
-          encType='multipart/form-data'
+          encType="multipart/form-data"
         >
           <h2>Редактирование товара</h2>
           <input
-            name='title'
+            name="title"
             onChange={this.onChangeHandler}
-            type='text'
+            type="text"
             value={this.state.title}
-            placeholder='Название'
+            placeholder="Название"
           />
           <input
-            name='description'
+            name="description"
             onChange={this.onChangeHandler}
-            type='text'
+            type="text"
             value={this.state.description}
-            placeholder='Описание'
+            placeholder="Описание"
           />
           <input
-            name='price'
+            name="price"
             onChange={this.onChangeHandler}
-            type='text'
+            type="text"
             value={this.state.price}
-            placeholder='Цена'
+            placeholder="Цена"
           />
-          <select name='categoryId' onChange={this.onChangeHandler}>
+          <select name="categoryId" onChange={this.onChangeHandler}>
             {categories &&
               categories.map(category => {
                 return (
@@ -165,13 +162,13 @@ class AdminEditProduct extends Component {
               })}
           </select>
           <input
-            id='file'
-            name='image'
+            id="file"
+            name="image"
             onChange={this.onImageHandler}
-            type='file'
+            type="file"
           />
-          <label for='file'>Загрузить изображение</label>
-          <button type='submit' disabled={!formValid}>
+          <label for="file">Загрузить изображение</label>
+          <button type="submit" disabled={!formValid}>
             Обновить
           </button>
         </form>

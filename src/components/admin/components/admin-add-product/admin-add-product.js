@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import withSushiService from "../../../hoc";
+
 class AdminAddProduct extends Component {
   state = {
     categories: null,
@@ -82,7 +83,7 @@ class AdminAddProduct extends Component {
   onSubmitHandler = e => {
     e.preventDefault();
     const fd = this.createFormData();
-    axios.post("http://localhost:8888/sushi-store/products/add", fd);
+    axios.post("http://sushi-store/products/add", fd);
     this.props.history.push("/products/");
     window.location.reload();
   };
@@ -91,30 +92,30 @@ class AdminAddProduct extends Component {
     return (
       <Fragment>
         <form
-          action='#'
+          action="#"
           onSubmit={this.onSubmitHandler}
-          encType='multipart/form-data'
+          encType="multipart/form-data"
         >
           <h2>Добавить товар</h2>
           <input
-            name='title'
+            name="title"
             onChange={this.onChangeHandler}
-            type='text'
-            placeholder='Название'
+            type="text"
+            placeholder="Название"
           />
           <input
-            name='description'
+            name="description"
             onChange={this.onChangeHandler}
-            type='text'
-            placeholder='Описание'
+            type="text"
+            placeholder="Описание"
           />
           <input
-            name='price'
+            name="price"
             onChange={this.onChangeHandler}
-            type='text'
-            placeholder='Цена'
+            type="text"
+            placeholder="Цена"
           />
-          <select name='categoryId' onChange={this.onChangeHandler}>
+          <select name="categoryId" onChange={this.onChangeHandler}>
             {categories &&
               categories.map(category => {
                 return (
@@ -125,13 +126,13 @@ class AdminAddProduct extends Component {
               })}
           </select>
           <input
-            id='file'
-            name='image'
+            id="file"
+            name="image"
             onChange={this.onImageHandler}
-            type='file'
+            type="file"
           />
-          <label for='file'>Загрузить изображение</label>
-          <button type='submit' disabled={!formValid}>
+          <label for="file">Загрузить изображение</label>
+          <button type="submit" disabled={!formValid}>
             Добавить
           </button>
         </form>

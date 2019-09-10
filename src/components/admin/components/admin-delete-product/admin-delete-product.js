@@ -21,9 +21,7 @@ class AdminDeleteProduct extends Component {
   onFormSubmit = e => {
     e.preventDefault();
     const idProductToDelete = this.props.match.params.id;
-    fetch(
-      `http://localhost:8888/sushi-store/products/delete/${idProductToDelete}`
-    );
+    fetch(`http://sushi-store/products/delete/${idProductToDelete}`);
     this.props.history.push("/products/");
     window.location.reload();
   };
@@ -38,7 +36,7 @@ class AdminDeleteProduct extends Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <h2>Вы подтверждаете удаление товара {title}?</h2>
-        <button type='submit'>Удалить товар</button>
+        <button type="submit">Удалить товар</button>
       </form>
     );
   }

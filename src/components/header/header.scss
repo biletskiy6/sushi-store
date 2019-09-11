@@ -22,12 +22,12 @@
     height: 100%;
   }
 
-  .user-cart button {
+  .user-cart a {
     display: block;
     border: none;
     position: relative;
     display: inline-flex;
-    background-color: #ff0000;
+    background-color: #fa4251;
     padding: 0;
     width: 80px;
     height: 100%;
@@ -43,7 +43,7 @@
       position: absolute;
       bottom: 5px;
       right: 10px;
-      color: #ff0000;
+      color: #fa4251;
       background-color: #fff;
       border-radius: 50%;
       font-size: 12px;
@@ -56,6 +56,8 @@
 }
 
 .phone {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: inherit;
   font-family: "MullerBold";
@@ -65,5 +67,10 @@
     opacity: 0.75;
     transition: all 0.35s ease;
     color: inherit;
+  }
+  img {
+    display: block;
+    margin-right: 10px;
+    width: 20px;
   }
 }

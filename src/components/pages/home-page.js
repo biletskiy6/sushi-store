@@ -7,7 +7,6 @@ import "./pages.scss";
 const HomePage = () => {
   return (
     <React.Fragment>
-      <Cart />
       <Header />
       <CategoriesList />
       <ItemList />

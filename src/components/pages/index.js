@@ -1,4 +1,5 @@
 import { HomePage } from "./home-page";
 import { AdminPage } from "./admin-page";
 import { CategoryPage } from "./category-page";
-export { HomePage, AdminPage, CategoryPage };
+import { CartPage } from "./cart-page";
+export { HomePage, AdminPage, CategoryPage, CartPage };

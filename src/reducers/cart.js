@@ -1,7 +1,7 @@
 const initialState = {
   productList: null,
   cartList: [],
-  isActive: false
+  isActive: true
 };
 const updateCartItem = (product, item, itemIndex, quantity) => {
   let newElem;

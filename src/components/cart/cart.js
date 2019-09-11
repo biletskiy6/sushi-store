@@ -19,32 +19,36 @@ const renderCartItems = (handles, cartList) => {
   }
   return (
     <React.Fragment>
-      <h2 className='cart-header'>Корзина</h2>
-      <ul className='cart-list'>
+      <h2 className="cart-header">Ваш заказ</h2>
+      <ul className="cart-list">
         {cartList &&
           cartList.map(item => {
-            // console.log(item);
             return (
-              <li key={item.id} className='cart-list-item'>
-                <img src={item.image} alt='' />
+              <li key={item.id} className="cart-list-item">
+                <img src={item.image} alt="" />
                 <h2>{item.title}</h2>
-                <div className='toggle-count'>
-                  <button onClick={() => decreaseItem(item.id)}>-</button>
-                  {item.count}
-                  <button onClick={() => increaseItem(item)}>+</button>
+                <div className="filters-container">
+                  <div className="toggle-count">
+                    <button onClick={() => decreaseItem(item.id)}>-</button>
+                    {item.count}
+                    <button onClick={() => increaseItem(item)}>+</button>
+                  </div>
+                  <span>$ {item.price}</span>
+                  <button
+                    onClick={() => deleteItemFromCart(item.id)}
+                    className="delete-item"
+                  >
+                    &times;
+                  </button>
                 </div>
-                <span>$ {item.price}</span>
-                <button
-                  onClick={() => deleteItemFromCart(item.id)}
-                  className='delete-item'
-                >
-                  &times;
-                </button>
               </li>
             );
           })}
       </ul>
-      <div className='total'>Total price:{getTotalPrice(cartList)}</div>
+      <div className="total">
+        <h3 className="total__header">Общая стоимость:</h3>
+        <p className="total__price">{getTotalPrice(cartList)} грн</p>
+      </div>
     </React.Fragment>
   );
 };
@@ -65,12 +69,7 @@ const Cart = ({
   };
   return (
     <div className={classNames}>
-      <div className='cart-content'>
-        <button onClick={() => closeCartModal()} className='cart-close'>
-          &times;
-        </button>
-        {renderCartItems(handles, cartList)}
-      </div>
+      <div className="cart-content">{renderCartItems(handles, cartList)}</div>
     </div>
   );
 };

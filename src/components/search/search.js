@@ -30,7 +30,7 @@ const Search = ({ history, searchBy, resetSearchTerm, state: { filter } }) => {
         value={filter.searchTerm}
         onChange={e => {
           searchBy(e.target.value);
-          history.push("/search/");
+          // history.push("/search/");
         }}
         placeholder="Что будем искать?"
       />

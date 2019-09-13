@@ -92,3 +92,9 @@
     }
   }
 }
+
+@media screen and(max-width: 1440px) {
+  .products-item {
+    width: calc(100% / 12 * 4 - 30px);
+  }
+}

@@ -4,9 +4,9 @@
   justify-content: center;
   position: fixed;
   width: 8vw;
-  // background-color: red;
+  padding-top: 4.6vw;
   left: 0;
-  height: 100vh;
+  min-height: 100vh;
   border-right: 1px solid #ececec;
 }
 
@@ -15,12 +15,17 @@
   list-style-type: none;
 
   &__item {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    // margin-top: 40px;
+    margin-bottom: 20px;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
   }
 
   &__link {
@@ -30,6 +35,7 @@
     text-decoration: none;
     transition: all 0.35s ease;
     padding: 10px 0;
+    text-align: center;
 
     &:hover {
       color: #000;

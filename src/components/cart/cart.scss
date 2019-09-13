@@ -6,6 +6,7 @@
   margin-left: 8vw;
   margin-top: calc(4.6vw + 40px);
   transition: all 0.45s ease;
+
   &-header {
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -13,11 +14,12 @@
     font-family: "MullerBold";
     letter-spacing: 0.75px;
   }
+
   &-content {
     max-width: 1350px;
     margin: 0 auto;
     position: relative;
-    // padding: 40px 60px;
+    padding: 0px 30px;
     background-color: #fff;
     transition: all 0.45s ease;
   }
@@ -38,6 +40,7 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #ececec;
     padding-bottom: 10px;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -91,10 +94,12 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 30px;
+
   &__price {
     margin: 0;
     font-size: 20px;
   }
+
   &__header {
     margin: 0;
   }

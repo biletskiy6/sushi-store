@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import sushiImg from "../../assets/images/sushi.png";
 import withSushiService from "../hoc";
 import { connect } from "react-redux";
 import { fetchCategories } from "../../actions";
@@ -19,17 +18,20 @@ class CategoriesListContainer extends Component {
 
 const CategoriesList = props => {
   return (
-    <aside className="categories-menu">
-      <ul className="categories-list">
+    <aside className='categories-menu'>
+      <ul className='categories-list'>
         {props.itemList &&
-          props.itemList.map(item => {
+          props.itemList.map((item, i) => {
             return (
-              <li key={item.id} className="categories-list__item">
+              <li key={item.id} className='categories-list__item'>
                 <Link
-                  className="categories-list__link"
+                  className='categories-list__link'
                   to={`/categories/${item.id}`}
                 >
-                  <img src={sushiImg} alt="" />
+                  <img
+                    src={require(`../../assets/images/categories/${i}.png`)}
+                    alt=''
+                  />
                   <span>{item.title}</span>
                 </Link>
               </li>

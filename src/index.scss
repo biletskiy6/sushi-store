@@ -7,8 +7,8 @@
   font-display: swap;
   src: local("Open Sans"), local("OpenSans"),
     url("./assets/fonts/MullerBold.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("./assets/fonts/MullerBold.woff")
-      format("woff");
+    /* Super Modern Browsers */
+    url("./assets/fonts/MullerBold.woff") format("woff");
 
   /* Modern Browsers */
 }
@@ -20,8 +20,8 @@
   font-display: swap;
   src: local("Open Sans"), local("OpenSans"),
     url("./assets/fonts/MullerRegular.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("./assets/fonts/MullerRegular.woff")
-      format("woff");
+    /* Super Modern Browsers */
+    url("./assets/fonts/MullerRegular.woff") format("woff");
 
   /* Modern Browsers */
 }
@@ -60,6 +60,11 @@ body {
   font-family: "MullerRegular";
   font-size: 16px;
   color: #333;
+}
+
+
+button:focus {
+  outline: none;
 }
 
 .container {

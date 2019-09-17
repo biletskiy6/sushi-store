@@ -5,35 +5,37 @@ import { connect } from "react-redux";
 
 import * as productActions from "../../actions/product";
 import { bindActionCreators } from "redux";
+import Paginator from "../paginator";
+
 import "./item-list.scss";
 
 import Filter from "../filter";
 
 const ItemList = props => {
   return (
-    <main className='main'>
-      <div className='container'>
-        <div className='main-wrapper'>
+    <main className="main">
+      <div className="container">
+        <div className="main-wrapper">
           <Filter />
-          <ul className='products item-list'>
+          <ul className="products item-list">
             {props.itemList &&
               props.itemList.map(item => {
                 item.price = parseInt(item.price);
                 return (
-                  <li key={item.id} className='products-item'>
-                    <img src={item.image} alt='' />
-                    <div className='products-description'>
-                      <div className='products-info'>
+                  <li key={item.id} className="products-item">
+                    <img src={item.image} alt="" />
+                    <div className="products-description">
+                      <div className="products-info">
                         <h3>{item.title}</h3>
                         <p>{item.description.slice(0, 100)}</p>
                       </div>
-                      <div className='products-price'>
-                        <img src={hryvnaIcon} alt='' />
+                      <div className="products-price">
+                        <img src={hryvnaIcon} alt="" />
                         <span>{item.price}</span>
                       </div>
                     </div>
                     <button onClick={() => props.addProduct(item)}>
-                      <img src={shoppingCart} alt='' />В корзину
+                      <img src={shoppingCart} alt="" />В корзину
                     </button>
                   </li>
                 );

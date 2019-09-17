@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 import * as cartActions from "../../actions/cart";
 import "./cart.scss";
 
@@ -12,7 +13,8 @@ const getTotalPrice = cartList => {
   return total;
 };
 
-const renderCartItems = (handles, cartList) => {
+const renderCartItems = (handles, cartList, isCheckoutPage) => {
+  console.log(isCheckoutPage);
   const { deleteItemFromCart, increaseItem, decreaseItem } = handles;
   if (cartList.length === 0) {
     return <h2>Ваша корзина пуста!</h2>;
@@ -49,6 +51,11 @@ const renderCartItems = (handles, cartList) => {
         <h3 className="total__header">Общая стоимость:</h3>
         <p className="total__price">{getTotalPrice(cartList)} грн</p>
       </div>
+      {!isCheckoutPage && (
+        <div className="accept-order">
+          <Link to="/checkout/">Оформить заказ</Link>
+        </div>
+      )}
     </React.Fragment>
   );
 };
@@ -56,10 +63,10 @@ const renderCartItems = (handles, cartList) => {
 const Cart = ({
   cartList,
   isActive,
-  closeCartModal,
   deleteItemFromCart,
   decreaseItem,
-  increaseItem
+  increaseItem,
+  isCheckoutPage
 }) => {
   let classNames = isActive ? "cart cart-active" : "cart";
   let handles = {
@@ -69,7 +76,9 @@ const Cart = ({
   };
   return (
     <div className={classNames}>
-      <div className="cart-content">{renderCartItems(handles, cartList)}</div>
+      <div className="cart-content">
+        {renderCartItems(handles, cartList, isCheckoutPage)}
+      </div>
     </div>
   );
 };

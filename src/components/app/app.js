@@ -5,8 +5,8 @@ import {
   HomePage,
   AdminPage,
   CategoryPage,
-  AdminProductAddPage,
-  CartPage
+  CartPage,
+  CheckoutPage
 } from "../pages";
 import "./app.scss";
 
@@ -25,6 +25,7 @@ const App = props => {
             }}
           ></Route>
           <Route path="/cart/" component={CartPage}></Route>
+          <Route path="/checkout/" component={CheckoutPage}></Route>
           {/* <Route path="/search/" component={SearchPage}></Route> */}
         </Switch>
       </div>

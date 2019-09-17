@@ -1,18 +1,20 @@
 import React from "react";
 import Header from "../header";
 import CategoriesList from "../categories-list";
-import Cart from "../cart";
 import "./pages.scss";
-const CartPage = props => {
+import Cart from "../cart";
+import Checkout from "../checkout";
+const CheckoutPage = () => {
   return (
     <React.Fragment>
       <Header />
       <CategoriesList />
       <main className="main">
-        <Cart />
+        <Checkout />
+        <Cart isCheckoutPage />
       </main>
     </React.Fragment>
   );
 };
 
-export { CartPage };
+export { CheckoutPage };

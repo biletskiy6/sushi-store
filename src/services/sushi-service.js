@@ -1,5 +1,5 @@
 export default class SushiService {
-  _apiBase = "http://localhost:8888/sushi-store";
+  _apiBase = "http://sushi-store";
   getResource = async url => {
     const data = await fetch(`${this._apiBase}${url}`);
     return data.json();

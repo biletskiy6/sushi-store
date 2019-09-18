@@ -68,14 +68,13 @@ const Cart = ({
   increaseItem,
   isCheckoutPage
 }) => {
-  let classNames = isActive ? "cart cart-active" : "cart";
   let handles = {
     deleteItemFromCart,
     decreaseItem,
     increaseItem
   };
   return (
-    <div className={classNames}>
+    <div className="cart order-container">
       <div className="cart-content">
         {renderCartItems(handles, cartList, isCheckoutPage)}
       </div>

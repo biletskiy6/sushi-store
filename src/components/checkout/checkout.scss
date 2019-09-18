@@ -1,46 +1,58 @@
-.form-control {
-    margin-bottom: 50px;
+.order-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0px 30px;
+  background-color: #fff;
+  transition: all 0.45s ease;
+}
 
-    button[type='submit'] {
-        background-color: #FA4251;
-        border: none;
-        color: #fff;
-        padding: 5px 20px;
-        border-radius: 4px;
+.form-control {
+  margin-bottom: 50px;
+
+  button[type="submit"] {
+    background-color: #fa4251;
+    border: none;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 4px;
+    &:disabled {
+      background-color: #ddd;
     }
+  }
 }
 
 .form-group {
-    input {
-        width: 100%;
-        border: 0;
-        border-bottom: 1px solid #999;
-        padding-bottom: 5px;
+  input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
 
-        &.has-error {
-            border-bottom-color: red;
-        }
+    &.has-error {
+      border-bottom-color: red;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid #999;
+  }
+
+  input,
+  textarea {
+    &:focus {
+      outline: none;
     }
 
-    textarea {
-        width: 100%;
-        border: none;
-        resize: none;
-        border-bottom: 1px solid #999;
+    &::placeholder {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
+  }
 
-    input,
-    textarea {
-        &:focus {
-            outline: none;
-        }
-
-        &::placeholder {
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
-    }
-
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }

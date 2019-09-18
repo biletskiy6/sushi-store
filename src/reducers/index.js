@@ -4,6 +4,7 @@ import categories from "./categories";
 import products from "./products";
 import cart from "./cart";
 import filter from "./filter";
+import orderSubmit from "./order-submit";
 import { reducer as form } from "redux-form";
 export default combineReducers({
   sushi,
@@ -11,5 +12,6 @@ export default combineReducers({
   products,
   cart,
   filter,
-  form
+  form,
+  orderSubmit
 });

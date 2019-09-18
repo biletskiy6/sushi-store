@@ -76,6 +76,11 @@ const Cart = (state = initialState, action) => {
         ...state,
         isActive: false
       };
+    case "RESET_CART_ITEMS":
+      return {
+        ...state,
+        cartList: []
+      };
 
     default:
       return state;
